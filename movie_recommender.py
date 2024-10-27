@@ -1,9 +1,15 @@
-import chromadb
+import sys 
+__import__('pysqlite3')
+sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
+import chromadb 
 import pandas as pd
 import numpy as np
 from sklearn.preprocessing import StandardScaler
 from chromadb.utils import embedding_functions
 import nltk
+nltk.download('punkt')
+nltk.download('punkt_tab')
+nltk.download('stopwords')
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
 import re
